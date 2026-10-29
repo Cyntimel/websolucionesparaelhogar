@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soluciones Para el Hogar Posadas</title>
+<meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados y termotanques en Posadas, Misiones.">
+<!-- Fuentes: Montserrat e Inter (Google Fonts). Si abrís la página sin internet, se usa una fuente parecida del sistema. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* COLORES: cambialos acá */
+  --verde:#183D35; --crema:#F5F2EA; --grafito:#292D2B; --dorado:#C69B62;
+  --verde-2:#10302a; --linea:rgba(198,155,98,.45);
+  /* TIPOGRAFÍAS: cambialas acá */
+  --f-titulo:'Montserrat',system-ui,sans-serif; --f-texto:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--f-texto);background:var(--crema);color:var(--grafito);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:var(--f-titulo);line-height:1.08;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.tbd{display:inline-block;font:600 .62rem/1 var(--f-texto);letter-spacing:.08em;text-transform:uppercase;color:var(--dorado);border:1px dashed var(--dorado);padding:3px 6px;border-radius:3px;vertical-align:middle;margin-left:6px}
+.eyebrow{font:600 .75rem var(--f-titulo);letter-spacing:.22em;text-transform:uppercase;color:var(--dorado);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--dorado)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 .85rem var(--f-titulo);letter-spacing:.06em;text-transform:uppercase;padding:16px 26px;border:1px solid var(--dorado);background:var(--dorado);color:var(--verde);cursor:pointer;position:relative;overflow:hidden;transition:color .35s var(--ease),transform .35s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;background:var(--crema);transform:translateY(101%);transition:transform .4s var(--ease);z-index:0}
+.btn>*{position:relative;z-index:1}
+.btn:hover::after{transform:none}.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--crema)}.btn.ghost::after{background:var(--dorado)}.btn.ghost:hover{color:var(--verde)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+/* Menú */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s}
+header.s{background:rgba(24,61,53,.96);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--linea)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:800 .9rem var(--f-titulo);letter-spacing:.08em;text-transform:uppercase;color:var(--crema);line-height:1.1}
+.logo b{color:var(--dorado);display:block;font-size:.62rem;letter-spacing:.3em;font-weight:600}
+.burger{width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative;z-index:60}
+.burger i{position:absolute;left:10px;right:10px;height:2px;background:var(--crema);transition:transform .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:15px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:27px}
+.open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.open .burger i:nth-child(2){opacity:0}
+.open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.menu{position:fixed;inset:0;background:var(--verde-2);display:flex;flex-direction:column;justify-content:center;padding:0 28px;gap:6px;clip-path:circle(0 at calc(100% - 40px) 34px);transition:clip-path .7s var(--ease);z-index:55}
+.open .menu{clip-path:circle(150% at calc(100% - 40px) 34px)}
+.menu a{font:700 clamp(1.8rem,8vw,2.6rem) var(--f-titulo);color:var(--crema);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s var(--ease),color .3s}
+.menu a:hover{color:var(--dorado)}
+.open .menu a{opacity:1;transform:none}
+.open .menu a:nth-child(2){transition-delay:.08s}.open .menu a:nth-child(3){transition-delay:.14s}.open .menu a:nth-child(4){transition-delay:.2s}.open .menu a:nth-child(5){transition-delay:.26s}.open .menu a:nth-child(1){transition-delay:.02s}
+@media(min-width:900px){
+  .burger{display:none}
+  .menu{position:static;clip-path:none;flex-direction:row;background:none;padding:0;gap:30px;align-items:center}
+  .menu a{font:600 .78rem var(--f-titulo);letter-spacing:.12em;text-transform:uppercase;opacity:1;transform:none;position:relative}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:100%;background:var(--dorado);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+  .menu a:hover::after{transform:scaleX(1)}
+}
+
+/* Portada */
+.hero{background:var(--verde);color:var(--crema);min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--linea) 1px,transparent 1px),linear-gradient(90deg,var(--linea) 1px,transparent 1px);background-size:64px 64px;opacity:.12;mask-image:radial-gradient(circle at 70% 40%,#000,transparent 70%);-webkit-mask-image:radial-gradient(circle at 70% 40%,#000,transparent 70%)}
+.hero .wrap{display:grid;gap:44px;position:relative}
+.hero h1{font-size:clamp(2.3rem,8.4vw,5rem);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--dorado)}
+.hero p.lead{max-width:48ch;margin:24px 0 32px;opacity:.88;font-size:1.05rem}
+.draw{height:2px;width:120px;background:var(--dorado);margin-top:26px;transform-origin:left;animation:draw 1.4s .5s var(--ease) both}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px}
+.in{opacity:0;transform:translateY(28px);animation:in .9s var(--ease) forwards}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.6s}
+@keyframes in{to{opacity:1;transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fl{50%{transform:translateY(-9px)}}
+.vis{position:relative;aspect-ratio:4/5;max-height:560px;width:100%;border:1px solid var(--linea)}
+.vis::before{content:"";position:absolute;inset:14px;border:1px solid var(--linea)}
+.ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:30px;color:rgba(245,242,234,.6);font-size:.8rem;background:repeating-linear-gradient(135deg,rgba(198,155,98,.07) 0 2px,transparent 2px 14px)}
+.ph svg{width:70%;max-width:260px;stroke:var(--dorado);fill:none;stroke-width:1.2;margin:0 auto 16px;display:block;opacity:.8}
+.tag{position:absolute;background:var(--crema);color:var(--verde);font:700 .7rem var(--f-titulo);letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border-left:3px solid var(--dorado);animation:fl 5s ease-in-out infinite;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.t1{top:8%;left:-14px}.t2{top:46%;right:-10px;animation-delay:-1.6s}.t3{bottom:8%;left:-10px;animation-delay:-3.2s}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center}.t1,.t3{left:-34px}.t2{right:-24px}}
+
+/* Secciones */
+section{padding:92px 0}
+h2{font-size:clamp(1.9rem,5.4vw,3.3rem);font-weight:800;max-width:18ch}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.v{opacity:1;transform:none}
+
+/* Servicios */
+.sv-head{display:grid;gap:18px;margin-bottom:44px}
+.sv-head p{max-width:46ch;opacity:.8}
+.sv{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;padding:28px 0;border-top:1px solid var(--linea);position:relative;transition:padding .45s var(--ease)}
+.sv:last-child{border-bottom:1px solid var(--linea)}
+.sv::before{content:"";position:absolute;inset:0 -20px;background:var(--verde);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
+.sv:hover::before{transform:scaleY(1)}
+.sv:hover{color:var(--crema);padding-left:14px;padding-right:14px}
+.sv .n{font:800 2.4rem var(--f-titulo);color:var(--dorado);grid-row:span 3;line-height:1}
+.sv h3{font-size:1.2rem;font-weight:700}
+.sv p{opacity:.78;font-size:.95rem;max-width:56ch}
+.sv a.q{justify-self:start;margin-top:10px;font:700 .75rem var(--f-titulo);letter-spacing:.1em;text-transform:uppercase;color:var(--dorado);border-bottom:1px solid currentColor;padding-bottom:3px;transition:letter-spacing .3s}
+.sv a.q:hover{letter-spacing:.16em}
+section#servicios{position:relative;z-index:0}
+@media(min-width:900px){
+  .sv-head{grid-template-columns:1fr 1fr;align-items:end}
+  .sv{grid-template-columns:90px 1.1fr 1.5fr auto;align-items:center;gap:30px}
+  .sv .n{grid-row:auto;font-size:3.4rem}
+  .sv a.q{margin:0}
+}
+
+/* Por qué */
+.why{background:var(--verde);color:var(--crema)}
+.why .grid{display:grid;gap:44px}
+.why ul{list-style:none;display:grid;gap:30px}
+.why li{display:grid;grid-template-columns:54px 1fr;gap:16px;padding-bottom:26px;border-bottom:1px solid var(--linea)}
+.why li b{font:800 1.5rem var(--f-titulo);color:var(--dorado)}
+.why li h3{font-size:1.1rem;margin-bottom:4px}
+.why li p{opacity:.78;font-size:.93rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linea);margin-top:50px;border:1px solid var(--linea)}
+.stats div{background:var(--verde);padding:26px 18px}
+.stats strong{display:block;font:800 clamp(2rem,6vw,3.2rem) var(--f-titulo);color:var(--dorado)}
+.stats span{font-size:.82rem;opacity:.8}
+@media(min-width:900px){.why .grid{grid-template-columns:.8fr 1.2fr;gap:80px}.stats{grid-template-columns:repeat(4,1fr)}}
+
+/* Trabajos */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.g{position:relative;aspect-ratio:1;background:var(--verde);overflow:hidden;display:grid;place-items:center;color:rgba(245,242,234,.65);font-size:.75rem;text-align:center;padding:12px;transition:transform .5s var(--ease)}
+.g::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(198,155,98,.1) 0 2px,transparent 2px 14px);transition:transform .8s var(--ease)}
+.g:hover::before{transform:scale(1.3) rotate(4deg)}
+.g:hover{transform:translateY(-4px)}
+.g span{position:relative}
+.g i{position:absolute;left:10px;bottom:8px;font:700 .65rem var(--f-titulo);font-style:normal;letter-spacing:.14em;color:var(--dorado)}
+.g.w{grid-column:span 2;aspect-ratio:2/1}
+@media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr)}.g.w{grid-column:span 2}.g.t{grid-row:span 2;aspect-ratio:auto}}
+
+/* FAQ */
+.faq-g{display:grid;gap:40px}
+details{border-top:1px solid var(--linea);padding:4px 0}
+details:last-child{border-bottom:1px solid var(--linea)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font:700 1.02rem var(--f-titulo);transition:color .3s}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.6rem;line-height:1;color:var(--dorado);transition:transform .4s var(--ease)}
+details[open] summary::after{transform:rotate(135deg)}
+summary:hover{color:var(--verde)}
+details p{padding:0 0 22px;max-width:60ch;opacity:.82;animation:in .5s var(--ease)}
+@media(min-width:900px){.faq-g{grid-template-columns:.8fr 1.2fr;gap:80px}}
+
+/* Contacto */
+.ct{background:var(--grafito);color:var(--crema)}
+.ct .grid{display:grid;gap:50px}
+.ct h2{max-width:14ch}
+.ct .info{margin-top:30px;display:grid;gap:18px}
+.ct .info div{border-left:2px solid var(--dorado);padding-left:16px;font-size:.95rem}
+.ct .info small{display:block;font:600 .68rem var(--f-titulo);letter-spacing:.18em;text-transform:uppercase;color:var(--dorado)}
+form{display:grid;gap:18px;background:rgba(245,242,234,.04);padding:28px;border:1px solid var(--linea)}
+label{display:grid;gap:7px;font:600 .72rem var(--f-titulo);letter-spacing:.14em;text-transform:uppercase;color:var(--dorado)}
+input,select,textarea{font:400 1rem var(--f-texto);color:var(--crema);background:transparent;border:0;border-bottom:1px solid var(--linea);padding:10px 0;outline:0;transition:border-color .3s;border-radius:0;width:100%}
+select option{color:var(--grafito)}
+input:focus,select:focus,textarea:focus{border-color:var(--dorado)}
+textarea{resize:vertical;min-height:80px}
+@media(min-width:900px){.ct .grid{grid-template-columns:1fr 1fr;gap:90px}}
+footer{background:var(--verde-2);color:rgba(245,242,234,.6);font-size:.8rem;padding:26px 0;text-align:center}
+
+/* WhatsApp fijo */
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--dorado);color:var(--verde);display:grid;place-items:center;box-shadow:0 10px 28px rgba(0,0,0,.35);transition:transform .35s var(--ease)}
+.wa:hover{transform:scale(1.1) rotate(-6deg)}
+.wa svg{width:28px;height:28px;fill:currentColor}
+.wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--dorado);animation:pu 2.4s infinite}
+@keyframes pu{from{transform:scale(1);opacity:.8}to{transform:scale(1.6);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .in,.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#inicio" class="logo">Soluciones para el hogar<b>POSADAS</b></a>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#porque">Por qué elegirnos</a><a href="#trabajos">Trabajos</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<a class="wa" data-wa="Hola, quiero pedir un presupuesto." href="https://wa.me/5493765255175" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><circle cx="8" cy="12" r="1.3" fill="#183D35"/><circle cx="12" cy="12" r="1.3" fill="#183D35"/><circle cx="16" cy="12" r="1.3" fill="#183D35"/></svg>
+</a>
+
+<main>
+<!-- 1. INICIO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow in d1">Posadas, Misiones</p>
+      <h1 class="in d2">Tu hogar, en manos <em>matriculadas.</em></h1>
+      <div class="draw"></div>
+      <p class="lead in d3">Instalación, mantenimiento y reparación de aires acondicionados, termotanques, tanques de agua y filtros de agua. Servicio profesional, responsable y confiable. <span class="tbd">Texto de ejemplo</span></p>
+      <div class="cta in d4">
+        <a class="btn" data-wa="Hola, quiero pedir un presupuesto." href="https://wa.me/5493765255175" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span>Escribinos por WhatsApp</span></a>
+        <a class="btn ghost" href="#servicios"><span>Ver servicios</span></a>
+      </div>
+    </div>
+    <div class="vis in d3">
+      <!-- FOTO: Imagen de Posadas con el monumento al Indio Guacurarí de fondo, un técnico uniformado con manifold de refrigeración y equipos de aire acondicionado / termotanque. Reemplazar el bloque .ph por <img src="foto-portada.jpg" alt="..." style="width:100%;height:100%;object-fit:cover"> -->
+      <div class="ph"><div>
+        <svg viewBox="0 0 200 140"><rect x="20" y="20" width="110" height="40" rx="4"/><path d="M30 48h90M30 40h90"/><rect x="146" y="30" width="34" height="90" rx="12"/><path d="M146 52h34M163 120v10M20 130h160M60 60v12M90 60v12M105 60v12"/></svg>
+        FOTO DE PORTADA<br>Posadas + Monumento a Guacurarí + técnico + equipos
+      </div></div>
+      <span class="tag t1">Aire acondicionado</span>
+      <span class="tag t2">Termotanques</span>
+      <span class="tag t3">Técnicos matriculados</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sv-head rv">
+      <div><p class="eyebrow">Nuestros servicios</p><h2>Soluciones técnicas para cada necesidad.</h2></div>
+      <p>Precios a consultar: se cotiza según el tipo de trabajo, el equipo y la complejidad. Pedí tu presupuesto por WhatsApp.</p>
+    </div>
+    <div>
+      <article class="sv rv"><span class="n">01</span><h3>Instalación de aires acondicionados</h3><p>Instalación segura y prolija de equipos split y de otros tipos, según tu ambiente. <span class="tbd">Ajustar texto</span></p><a class="q" data-wa="Hola, quiero presupuesto para: Instalación de aires acondicionados." href="https://wa.me/5493765255175" target="_blank" rel="noopener">Pedir presupuesto</a></article>
+      <article class="sv rv"><span class="n">02</span><h3>Mantenimiento y limpieza de aires</h3><p>Limpieza y revisión para que tu equipo rinda mejor y dure más. <span class="tbd">Ajustar texto</span></p><a class="q" data-wa="Hola, quiero presupuesto para: Mantenimiento y limpieza de aires acondicionados." href="https://wa.me/5493765255175" target="_blank" rel="noopener">Pedir presupuesto</a></article>
+      <article class="sv rv"><span class="n">03</span><h3>Reparación y diagnóstico de climatización</h3><p>Detectamos la falla y la resolvemos con herramientas profesionales. <span class="tbd">Ajustar texto</span></p><a class="q" data-wa="Hola, quiero presupuesto para: Reparación y diagnóstico de equipos de climatización." href="https://wa.me/5493765255175" target="_blank" rel="noopener">Pedir presupuesto</a></article>
+      <article class="sv rv"><span class="n">04</span><h3>Instalación de termotanques eléctricos</h3><p>Colocación correcta y segura de tu termotanque eléctrico. <span class="tbd">Ajustar texto</span></p><a class="q" data-wa="Hola, quiero presupuesto para: Instalación de termotanques eléctricos." href="https://wa.me/5493765255175" target="_blank" rel="noopener">Pedir presupuesto</a></article>
+      <article class="sv rv"><span class="n">05</span><h3>Reparación y mantenimiento de termotanques</h3><p>Revisión, reparación y mantenimiento para que siempre tengas agua caliente. <span class="tbd">Ajustar texto</span></p><a class="q" data-wa="Hola, quiero presupuesto para: Reparación y mantenimiento de termotanques eléctricos." href="https://wa.me/5493765255175" target="_blank" rel="noopener">Pedir presupuesto</a></article>
+      <article class="sv rv"><span class="n">06</span><h3>Servicio técnico y soluciones para el hogar</h3><p>Tanques de agua, filtros de agua y otras soluciones generales para tu casa o negocio. <span class="tbd">Ajustar texto</span></p><a class="q" data-wa="Hola, quiero presupuesto para: Servicio técnico y soluciones para el hogar." href="https://wa.me/5493765255175" target="_blank" rel="noopener">Pedir presupuesto</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. POR QUÉ ELEGIRNOS -->
+<section class="why" id="porque">
+  <div class="wrap">
+    <div class="grid">
+      <div class="rv"><p class="eyebrow">Por qué elegirnos</p><h2>Calidad, seguridad y mejora continua.</h2></div>
+      <ul>
+        <li class="rv"><b>01</b><div><h3>Técnicos matriculados y certificados</h3><p>Profesionales con la habilitación para trabajar con seguridad en tu hogar o negocio.</p></div></li>
+        <li class="rv"><b>02</b><div><h3>Experiencia en trabajos realizados</h3><p>Soluciones pensadas para cada necesidad, con la práctica de muchas instalaciones y reparaciones.</p></div></li>
+        <li class="rv"><b>03</b><div><h3>Capacitación constante</h3><p>Nos actualizamos en técnicas, herramientas y soluciones para ofrecerte lo mejor.</p></div></li>
+        <li class="rv"><b>04</b><div><h3>Servicio responsable y confiable</h3><p>Compromiso con la calidad en cada trabajo, para residencias y pequeños negocios.</p></div></li>
+      </ul>
+    </div>
+    <div class="stats rv">
+      <!-- Poné tu número real en data-count (ej: data-count="8"). Mientras diga 0, se muestra "00". -->
+      <div><strong data-count="0" data-pre="+">00</strong><span>Años de experiencia <span class="tbd">completar</span></span></div>
+      <div><strong data-count="0" data-pre="+">00</strong><span>Trabajos realizados <span class="tbd">completar</span></span></div>
+      <div><strong data-count="0" data-pre="+">00</strong><span>Equipos instalados <span class="tbd">completar</span></span></div>
+      <div><strong data-count="0" data-pre="+">00</strong><span>Clientes atendidos <span class="tbd">completar</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. TRABAJOS -->
+<section id="trabajos">
+  <div class="wrap">
+    <div class="rv"><p class="eyebrow">Nuestros trabajos</p><h2>Trabajos reales, resultados que se ven.</h2></div>
+    <div class="gal">
+      <!-- FOTO: instalación de aire acondicionado terminada (split en pared, caños prolijos) -->
+      <div class="g w t rv"><span>FOTO 01<br>Instalación de aire acondicionado</span><i>INSTALACIÓN</i></div>
+      <!-- FOTO: técnico trabajando con manifold en un equipo -->
+      <div class="g rv"><span>FOTO 02<br>Técnico con manifold</span><i>DIAGNÓSTICO</i></div>
+      <!-- FOTO: termotanque eléctrico instalado -->
+      <div class="g rv"><span>FOTO 03<br>Termotanque instalado</span><i>TERMOTANQUES</i></div>
+      <!-- FOTO: limpieza o mantenimiento de equipo -->
+      <div class="g rv"><span>FOTO 04<br>Mantenimiento de equipo</span><i>MANTENIMIENTO</i></div>
+      <!-- FOTO: tanque de agua o filtro de agua instalado -->
+      <div class="g rv"><span>FOTO 05<br>Tanque o filtro de agua</span><i>HOGAR</i></div>
+      <!-- FOTO: equipo del trabajo / técnicos con uniforme -->
+      <div class="g w rv"><span>FOTO 06<br>Nuestro equipo en acción</span><i>EQUIPO</i></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PREGUNTAS FRECUENTES -->
+<section id="faq" style="background:#ece7da">
+  <div class="wrap faq-g">
+    <div class="rv"><p class="eyebrow">Preguntas frecuentes</p><h2>Lo que más nos preguntan.</h2></div>
+    <div class="rv">
+      <details><summary>¿Qué servicios ofrecen?</summary><p>Instalación, mantenimiento y reparación de aires acondicionados y termotanques eléctricos, además de tanques de agua, filtros de agua y otras soluciones para el hogar.</p></details>
+      <details><summary>¿Cuánto cuesta un trabajo?</summary><p>Depende del tipo de trabajo, del equipo y de la complejidad. Escribinos por WhatsApp, contanos qué necesitás y te pasamos el presupuesto.</p></details>
+      <details><summary>¿Cómo es la instalación de un aire acondicionado?</summary><p>Un técnico revisa el ambiente, define el lugar ideal y realiza la instalación con herramientas profesionales. <span class="tbd">Completar detalles del proceso</span></p></details>
+      <details><summary>¿Cada cuánto conviene hacer mantenimiento?</summary><p>Depende del uso y del equipo. Un técnico te puede recomendar la frecuencia adecuada. <span class="tbd">Completar con tu recomendación</span></p></details>
+      <details><summary>¿Los trabajos tienen garantía?</summary><p><span class="tbd">Completar</span> Escribí acá tu política de garantía real (qué cubre y por cuánto tiempo).</p></details>
+      <details><summary>¿Los técnicos están matriculados?</summary><p>Sí, contamos con técnicos matriculados y certificados, con capacitación constante.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CONTACTO -->
+<section class="ct" id="contacto">
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow">Contacto y presupuestos</p>
+      <h2>Contanos qué necesitás.</h2>
+      <a class="btn" style="margin-top:30px" data-wa="Hola, quiero pedir un presupuesto." href="https://wa.me/5493765255175" target="_blank" rel="noopener"><span>Abrir WhatsApp</span></a>
+      <div class="info">
+        <div><small>WhatsApp</small>3765 25-5175</div>
+        <div><small>Instagram</small>@usuario <span class="tbd">reemplazar</span></div>
+        <div><small>Zona de cobertura</small>Posadas y alrededores <span class="tbd">completar localidades</span></div>
+        <div><small>Horarios</small><span class="tbd">completar</span></div>
+      </div>
+    </div>
+    <!-- El formulario arma un mensaje y abre WhatsApp con tus datos ya escritos. -->
+    <form class="rv" id="f">
+      <label>Tu nombre<input name="n" required autocomplete="name"></label>
+      <label>Qué necesitás<select name="s"><option>Instalación de aire acondicionado</option><option>Mantenimiento de aire acondicionado</option><option>Reparación de climatización</option><option>Instalación de termotanque</option><option>Reparación de termotanque</option><option>Otro servicio para el hogar</option></select></label>
+      <label>Contanos más<textarea name="m"></textarea></label>
+      <button class="btn" type="submit"><span>Enviar por WhatsApp</span></button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Soluciones Para el Hogar Posadas · Posadas, Misiones</div></footer>
+
+<script>
+const NUM='5493765255175',$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$$('[data-wa]').forEach(a=>a.href='https://wa.me/'+NUM+'?text='+encodeURIComponent(a.dataset.wa));
+const h=$('#top'),b=$('.burger');
+b.onclick=()=>{const o=h.classList.toggle('open');b.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+$$('.menu a').forEach(a=>a.onclick=()=>{h.classList.remove('open');document.body.style.overflow=''});
+addEventListener('scroll',()=>h.classList.toggle('s',scrollY>30),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}}),{threshold:.12});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const co=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;co.unobserve(x.target);const el=x.target,t=+el.dataset.count;if(!t)return;
+  const p=el.dataset.pre||'';if(reduce){el.textContent=p+t;return}
+  const s=performance.now();(function f(n){const k=Math.min((n-s)/1400,1);el.textContent=p+Math.round(t*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(s)}),{threshold:.6});
+$$('[data-count]').forEach(el=>co.observe(el));
+$('#f').onsubmit=e=>{e.preventDefault();const d=new FormData(e.target);
+  const t='Hola, soy '+d.get('n')+'. Necesito: '+d.get('s')+'.'+(d.get('m')?' '+d.get('m'):'');
+  open('https://wa.me/'+NUM+'?text='+encodeURIComponent(t),'_blank')};
+$('#y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
